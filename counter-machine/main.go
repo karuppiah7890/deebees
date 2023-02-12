@@ -83,9 +83,7 @@ func getCounter(res http.ResponseWriter, req *http.Request, dbChannel chan int) 
 		jsonError, _ := createJsonError(fmt.Sprintf("error occurred while forming JSON response: %v", err))
 		// TODO: Will the below write header and write work? Because we are trying to write
 		// multiple times
-		// TODO: The assumption here is some server side error - or it's possible
-		// that it's client side too - client closed connection in between and caused
-		// some error. Giving the benefit of doubt to the user for now though
+		// TODO: The assumption here is some server side error
 		res.WriteHeader(http.StatusInternalServerError)
 		// TODO: Handle this error
 		_, _ = res.Write(jsonError)
@@ -136,10 +134,10 @@ func incrementCounter(res http.ResponseWriter, req *http.Request, dbChannel chan
 		jsonError, _ := createJsonError(fmt.Sprintf("error occurred while parsing JSON request: %v", err))
 		// TODO: Will the below write header and write work? Because we are trying to write
 		// multiple times
-		// TODO: The assumption here is some server side error - or it's possible
-		// that it's client side too - client closed connection in between and caused
-		// some error. Giving the benefit of doubt to the user for now though
-		res.WriteHeader(http.StatusInternalServerError)
+		// TODO: The assumption here is some client side error as server side issues don't seem
+		// like a thing here, unless there's some unexpected issue, like JSON too big and memory not
+		// enough etc. Gotta read up on this
+		res.WriteHeader(http.StatusBadRequest)
 		// TODO: Handle this error
 		_, _ = res.Write(jsonError)
 		return
