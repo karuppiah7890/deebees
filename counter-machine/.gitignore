@@ -1,3 +1,7 @@
 counter-machine
 
 *.tar.gz
+
+*.env*
+
+!.env.sample
