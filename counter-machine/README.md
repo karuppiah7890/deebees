@@ -18,3 +18,5 @@ Below are some of the features I have in mind for this DB
 - [ ] Optional Persistence based on configuration
 - [ ] Replication - Allow for another instance to replicate from one database
 - [ ] Replication - Allow for multiple instances to replicate from one database
+- [ ] HTTP Clients for the Database in different server side languages, like Java, TypeScript (NodeJs) etc
+- [ ] gRPC server with gRPC clients
