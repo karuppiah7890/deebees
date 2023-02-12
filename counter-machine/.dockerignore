@@ -17,3 +17,7 @@ CONTRIBUTING.md
 Dockerfile
 
 .gitignore
+
+*.py
+
+*pycache*
