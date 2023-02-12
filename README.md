@@ -1,4 +1,4 @@
 # deebees
 
-My small repository of my databases
+My small repository of my own databases
 
