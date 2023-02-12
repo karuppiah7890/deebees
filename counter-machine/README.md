@@ -20,3 +20,13 @@ Below are some of the features I have in mind for this DB
 - [ ] Replication - Allow for multiple instances to replicate from one database
 - [ ] HTTP Clients for the Database in different server side languages, like Java, TypeScript (NodeJs) etc
 - [ ] gRPC server with gRPC clients
+
+## Future Ideas
+
+- [ ] Load test and check CPU and RAM usage
+    - [ ] Profile the program
+    - [ ] Load test using Locust
+    - [ ] Load test in resource constrained environments. Simulate such an environment with docker containers with limited resources
+
+- [ ] Test the correctness of the implementation
+    - [ ] If the counter value is correct when many (large scale) concurrent requests are sent with different values
